@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse and register for SMIU university events.">
+  <title>SMIU Events Portal | Events</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand"><span class="brand-badge">SMIU</span> Events Portal</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html" class="active">Events</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero page-hero">
+      <div class="container">
+        <h1>University <span>Events</span></h1>
+        <p>Search, filter and register for events hosted by SMIU societies and departments.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="toolbar">
+          <input type="search" id="search" class="search" placeholder="Search events, societies or venues..." aria-label="Search events">
+          <div class="chips" id="chips" role="group" aria-label="Filter by category"></div>
+        </div>
+
+        <div class="grid grid-3" id="event-grid"></div>
+        <p class="empty" id="no-events">No events match your search. Try another keyword or category.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Registration modal -->
+  <div class="modal-backdrop" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+      <h2 id="modal-title">Event Registration</h2>
+      <p class="event-name" id="modal-event"></p>
+
+      <form id="register-form" novalidate>
+        <div class="form-group">
+          <label for="reg-name">Full Name</label>
+          <input type="text" id="reg-name" name="name" placeholder="e.g. Wasif Ahmed">
+          <div class="error">Please enter your full name (min. 3 characters).</div>
+        </div>
+        <div class="form-group">
+          <label for="reg-roll">Roll Number</label>
+          <input type="text" id="reg-roll" name="roll" placeholder="e.g. BSCS-2023-045">
+          <div class="error">Please enter a valid roll number.</div>
+        </div>
+        <div class="form-group">
+          <label for="reg-email">Email</label>
+          <input type="email" id="reg-email" name="email" placeholder="you@example.com">
+          <div class="error">Please enter a valid email address.</div>
+        </div>
+        <div class="form-group">
+          <label for="reg-dept">Department</label>
+          <select id="reg-dept" name="dept">
+            <option value="">Select department</option>
+            <option>Computer Science</option>
+            <option>Software Engineering</option>
+            <option>Business Administration</option>
+            <option>Electrical Engineering</option>
+            <option>Media Sciences</option>
+            <option>Other</option>
+          </select>
+          <div class="error">Please select your department.</div>
+        </div>
+        <button type="submit" class="btn btn-green" style="width:100%">Confirm Registration</button>
+        <div class="notice" id="reg-success" role="status"></div>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>SMIU Events Portal</h4>
+          <p>Sindh Madressatul Islam University, Student Affairs Office. Bringing campus life together.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="events.html">Events</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Visit Us</h4>
+          <p>Aiwan-e-Tijarat Road, Karachi, Pakistan</p>
+        </div>
+      </div>
+      <p class="copyright">&copy; <span id="year">2026</span> SMIU Student Affairs Office. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/events-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
